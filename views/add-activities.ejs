@@ -1,0 +1,90 @@
+<%- include('partials/logged-in-header') -%>
+
+  <div class="container ">
+    <div class="row mt-5 mx-auto ">
+      <div class="my-3 px-20">
+        <div>
+          <p class="pb-2"><strong>User Name</strong>: <%= user.userName %>
+          </p>
+          <p><strong>Email</strong>: <%= user.email %>
+          </p>
+          <!-- <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
+        </div>
+        <div class="mt-5 mx-auto">
+          <div class="pb-3 mx-auto flex justify-center text-3xl font-semibold">
+            <h2>Add an activity</h2>
+          </div>
+
+          <form action="/activity/createActivity" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name">
+            </div>
+
+            <div class="mb-3">
+              <label for="country" class="form-label">What skill is the most prevalent in your
+                activity?</label>
+              <select class="form-select" aria-label="Default select example" id="skills" name="skills">
+                <option selected>Select Skill</option>
+                <option value="Gross Motor Skills">Gross Motor Skills</option>
+                <option value="Fine Motor Skills">Fine Motor Skills</option>
+                <option value="Social Skills">Social Skills</option>
+                <option value="Listening Skills">Listening Skills</option>
+                <option value="Communication Skills">Communication Skills</option>
+                <option value="Early Math Skills">Early Math Skills</option>
+                <option value="Emotional Development">Emotional Development</option>
+                <option value="Problem-Solving Skills">Problem-Solving Skills</option>
+                <option value="Creativity">Creativity</option>
+                <option value="Attention Span">Attention Span</option>
+                <option value="Early Literacy Development">Early Literacy Development</option>
+
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="caption" class="form-label">Caption</label>
+              <textarea class="form-control" id="caption" name="caption"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="material" class="form-label">Material</label>
+              <textarea class="form-control" id="material" name="material"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="directions" class="form-label">Directions</label>
+              <textarea class="form-control" id="directions" name="directions"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="imgUpload" class="form-label">Image</label>
+              <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+
+            <div class=" flex justify-center">
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </div>
+
+
+          </form>
+          <div class="row justify-content-center mt-5 pl-3">
+            <a class="btn btn-primary" href="/feed">Return to Feed</a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-6">
+        <ul class="row list-unstyled">
+          <% for(var i=0; i<activities.length; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/activity/<%= activities[i]._id%>">
+                <img class="img-fluid" src="<%= activities[i].image%>">
+              </a>
+            </li>
+            <% } %>
+        </ul>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+
+  <%- include('partials/footer') -%>

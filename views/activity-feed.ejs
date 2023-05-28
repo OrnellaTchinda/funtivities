@@ -1,0 +1,166 @@
+<%- include('partials/logged-in-header') -%>
+
+
+
+    <section id="portfolio" class="portfolio sections-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header p-4 mx-auto flex justify-center text-3xl font-semibold italic">
+                <h2>Explore Activities</h2>
+
+            </div>
+            <div class="body">
+                <div class="container2">
+                    <% for(var i=0; i<activities.length; i++) {%>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="/activity/<%= activities[i]._id%>" data-gallery="portfolio-gallery-app"
+                                    class="glightbox recipePhoto">
+                                    <img class="img-fluid" src="<%= activities[i].image%>">
+                                </a>
+                                <!-- <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" /> -->
+                            </div>
+                            <div class="card-body">
+                                <span class="tag tag-teal">
+                                    <%= activities[i].skills %>
+                                </span>
+                                <h4 class="card-caption text">
+                                    <a href="#">
+                                        <%= activities[i].name %>
+                                    </a>
+                                </h4>
+                                <p class="card-description">
+                                    <%= activities[i].caption %>
+                                </p>
+                                <div class="user">
+                                    <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"
+                                        alt="user" />
+
+                                    <div class="user-info">
+                                        <h5>
+                                            <%= userName[i]%>
+                                        </h5>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+                data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+
+                <div class="row gy-4 portfolio-container">
+                    <% for(var i=0; i<activities.length; i++) {%>
+                        <div class="col-md-4 portfolio-item filter-app">
+
+                            <div class="portfolio-wrap card">
+                                <div class="imgPlace">
+                                    <a href="/activity/<%= activities[i]._id%>" data-gallery="portfolio-gallery-app"
+                                        class="glightbox recipePhoto">
+                                        <img class="img-fluid" src="<%= activities[i].image%>">
+                                    </a>
+                                </div>
+
+
+                                <div class="portfolio-info">
+                                    <h4 class="card-caption">
+                                        <a href="#">
+                                            <%= activities[i].name %>
+                                        </a>
+                                    </h4>
+
+
+                                    <div class="buttonN"><a href="/activity/<%= activities[i]._id%>"
+                                            class="btn btn-outline-primary">View
+                                            Activity</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+                </div>
+            </div> -->
+
+
+        <!-- <div class="row row-cols-1 row-cols-md-4 g-4">
+                <% for(var i=0; i<activities.length; i++) {%>
+                    <div class="col">
+                        <div class="card h-100 w-100">
+                            <img src="<%= activities[i].image%>" class="card-img-top h-75" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= activities[i].title%>
+                                </h5>
+                                <p class="card-text"><i class="px-1 bi bi-heart"></i>
+                                    <%= activities[i].likes.length - 1 %>
+                                </p>
+                                <p class="card-text"><small class="text-muted">By: <%= userName[i]%></small></p>
+                                <p class="card-text">
+                                    <%= activities[i].caption %>
+                                </p>
+                                <a href="/activity/<%= activities[i]._id%>" class="btn btn-outline-primary">View
+                                    Recipe</a>
+                            </div>
+                            <!-- <div class="card-footer">
+                                <span class="badge bg-primary">
+                                    <%= activities[i].country%>
+                                </span>
+                                <span class="badge rounded-pill bg-secondary">
+                                    <%= activities[i].dish%>
+                                </span>
+                            </div> -->
+        <!-- </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div> -->
+
+        <!-- <article class="overflow-hidden rounded-lg border border-gray-100 shadow-sm">
+            
+            <% for(var i=0; i<activities.length; i++) {%>
+
+                <a href="/activity/<%= activities[i]._id%>">
+                    <img alt="Office" src="<%= activities[i].image%>" class="h-56 w-full object-cover" />
+                </a>
+
+
+                <div class="p-4 sm:p-6">
+                    <a href="#">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            <%= activities[i].name %>
+                        </h3>
+                    </a>
+
+                    <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+                        <%= activities[i].caption %>
+                    </p>
+
+                    <a href="/activity/<%= activities[i]._id%>"
+                        class="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
+                        Find out more
+
+                        <span aria-hidden="true" class="block transition group-hover:translate-x-0.5">
+                            &rarr;
+                        </span>
+                    </a>
+                </div>
+                <%}%>
+        </article> -->
+
+
+        <!-- </div> -->
+    </section>
+
+
+
+
+
+
+    <%- include('partials/footer') -%>

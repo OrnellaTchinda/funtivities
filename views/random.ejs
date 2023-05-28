@@ -1,0 +1,123 @@
+<!-- 
+  <h3>Plain Cards</h3>
+  <div class="cards-2 section-gray">
+    <div class="container">
+      <div class="row">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <div class="col-md-4">
+            <div class="card card-blog">
+
+              <div class="card-image">
+                <a href="/post/<%= posts[i]._id%>"> <img class="img img-raised img-fluid" src="<%= posts[i].image%>">
+                </a>
+                <div class="ripple-cont"></div>
+              </div>
+
+              <div class="table">
+                <!-- <h6 class="category text-info">Pharetra</h6> -->
+<h4 class="card-caption">
+  <a href="#">
+    <%= posts[i].title %>
+  </a>
+</h4>
+<p class="card-description">
+  <%= posts[i].caption %>
+</p>
+<a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary">View Recipe</a>
+</div>
+<div class="card-footer">
+  <small class="text-muted">
+    <%= posts[i].createdAt %>
+  </small>
+</div>
+</div>
+
+</div>
+<%}%>
+
+  <!-- 
+            <% for(var i=0; i<activities.length; i++) {%>
+              <div class="col-md-4">
+                <div class="card card-blog">
+                  <div class="card-image">
+                    <a href="/activity/<%= activities[i]._id%>"> <img class="img img-raised img-fluid"
+                        src="<%= activities[i].image%>">
+                    </a>
+                    <div class="ripple-cont"></div>
+                  </div>
+                  <div class="table">
+                    <!-- <h6 class="category text-info">Pharetra</h6> -->
+  <!-- <h4 class="card-caption">
+              <a href="#">
+                <%= activities[i].name%>
+              </a>
+            </h4>
+            <p class="card-description">
+              <%= activities[i].caption %>
+            </p>
+            <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary">View Activity</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+          <%= activities[i].createdAt %>
+        </small>
+      </div>
+    </div>
+
+  </div> -->
+  <!-- <%}%>  -->
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+  <!-- autre -->
+
+  <section id="portfolio" class="portfolio sections-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>Feed</h2>
+
+      </div>
+
+      <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+        data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="row gy-4 portfolio-container">
+          <% for(var i=0; i<posts.length; i++) {%>
+            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+
+              <div class="portfolio-wrap">
+                <div>
+                  <a href="/post/<%= posts[i]._id%>" class="imgPlace" data-gallery="portfolio-gallery-app"
+                    class="glightbox recipePhoto">
+                    <img class="img-fluid" src="<%= posts[i].image%>">
+                  </a>
+                </div>
+
+
+                <div class="portfolio-info">
+                  <h4 class="card-caption">
+                    <a href="#">
+                      <%= posts[i].title %>
+                    </a>
+                  </h4>
+                  <p class="card-description">
+                    <%= posts[i].caption %>
+                  </p>
+                  <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary">View Recipe</a>
+
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            <%}%>
+        </div>
+      </div>
+    </div>
+  </section> -->

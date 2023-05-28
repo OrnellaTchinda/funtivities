@@ -1,0 +1,70 @@
+<%- include('partials/logged-in-header') -%>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="my-3 px-20">
+                <div>
+                    <p><strong>User Name</strong>: <%= user.userName %>
+                    </p>
+                    <p><strong>Email</strong>: <%= user.email %>
+                    </p>
+                    <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+                </div>
+
+                <div class="mt-5 mx-auto">
+                    <div class="section-header p-4 mx-auto flex justify-center text-3xl font-semibold italic">
+                        <h1> My favorites Activties</h1>
+                    </div>
+
+                    <%console.log(activities[0]) %>
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <% for(var i=0; i<activities.length; i++) {%>
+                                <%if(activities[i].favorites.includes(user.id)) {%>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img src="<%= activities[i].image%>" alt="..." class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%= activities[i].name%>
+                                                </h5>
+                                                <p class="card-text"></p>
+                                                <a href="/activity/<%= activities[i]._id%>" class="btn btn-primary"></a>
+                                                View Activity</a>
+
+                                            </div>
+                                            <div class="card-footer">
+                                                <span class="badge rounded-pill bg-primary">
+                                                    <%= activities[i].skills%>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%}%>
+                        </div>
+                        <!-- <ul class="row list-unstyled">
+
+                            <li class="col-6 justify-content-between mt-5">
+                                <a href="/activity/<%= activities[i]._id%>">
+                                    <h2>
+                                        <%= activities[i].name%>
+                                    </h2>
+                                    <img class="img-fluid" src="">
+                                    <p>
+                                        <%= activities[i].material%>
+                                    </p>
+                                    <p>
+                                        <%= activities[i].directions%>
+                                    </p>
+                                </a>
+                            </li>
+                            
+                        </ul> -->
+                        <% } %>
+                            <div class="row justify-content-center mt-5">
+                                <a class="btn btn-primary" href="/feedA">Return to Feed</a>
+                            </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') -%>

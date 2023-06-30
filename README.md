@@ -1,3 +1,5 @@
+# Funtivities <a href="https://funtivities.cyclic.app" target="_blank">Check It Out</a>
+
 # Install
 
 `npm install`

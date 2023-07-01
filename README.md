@@ -1,5 +1,8 @@
 # Funtivities <a href="https://funtivities.cyclic.app" target="_blank">Check It Out</a>
 
+![alt text](https://github.com/OrnellaTchinda/solid-one/blob/a6961b9006afaebb63c48fbb6cec159325ab3b8a/Funtivities-webCapture.jpeg?raw=true)
+
+
 # Install
 
 `npm install`

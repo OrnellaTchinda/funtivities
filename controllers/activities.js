@@ -81,7 +81,7 @@ module.exports = {
         let madeFavorite = false;
         try {
             var activity = await Activity.findById({ _id: req.params.id })
-            madeFavorite = (activity.favorites.includes(req.ser.id))
+            madeFavorite = (activity.favorites.includes(req.user.id))
 
             //favorites array comes from activity model
         } catch (err) {
@@ -96,7 +96,8 @@ module.exports = {
                     })
 
                 console.log('Removed user from favorites array')
-                res.redirect(`/activity/${req.params.id}`)
+                // res.redirect(`/activity/${req.params.id}`)
+                res.redirect('back')
             } catch (err) {
                 console.log(err)
             }
@@ -109,7 +110,8 @@ module.exports = {
                     })
 
                 console.log('Added user to favorites array')
-                res.redirect(`/activity/${req.params.id}`)
+                res.redirect('back')
+                // res.redirect(`/activity/${req.params.id}`)
 
             } catch (err) {
                 //media is stored on cloudinary the above request respond with url to media and the media id that you will need when deleting content

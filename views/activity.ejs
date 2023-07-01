@@ -118,24 +118,25 @@
                 <p class=" p-3 activity-user">By: <%= user.userName %>
                 </p>
 
-                <div class="p-4">
-                    <form class="inline-flex items-center px-4 py-2 text-gray-800 text-sm font-medium rounded-md"
+                <div class="p-4 flex items-center justify-aroung mx-1 mt-1.5 mb-1">
+                    <!-- <form class="inline-flex items-center px-4  py-2 text-gray-800 text-sm font-medium rounded-md" -->
+                    <form class="flex text-gray-800 text-sm font-medium rounded-md"
                         action="/activity/likeActivity/<%= activity.id %>?_method=PUT" method="POST">
                         <button class=" <%if(activity.likes.includes(user.id)){ %> btn-liked <%} %>
-            btn btn-primary fa fa-heart" type="submit"> Like</button>
-                        <h3 class="col">
+            btn btn-primary fa fa-heart" type="submit"> </button>
+                        <span class="">
                             <%= activity.likes.length - 1 %>
-                        </h3>
+                        </span>
                     </form>
 
-                    <form class="inline-flex items-center px-4 py-2text-gray-800 text-sm font-medium rounded-md"
+                    <form class="inline-flex items-center px-4  py-2 text-gray-800 text-sm font-medium rounded-md"
                         action="/activity/favoriteActivity/<%= activity.id %>?_method=PUT" method="POST">
                         <button class=" <%if(activity.favorites.includes(user.id)){ %> fa fa-bookmark-fill<%} else { %> fa fa-bookmark <% }%>
-            btn btn-primary " type="submit"> Bookmark</button>
+            btn btn-primary " type="submit">Save </button>
                     </form>
                     <!-- <%if(activity.user==user.id){ %> -->
                     <form action="/activity/deleteActivity/<%= activity.id %>?_method=DELETE" method="POST"
-                        class="inline-flex items-center px-4 py-2  text-gray-800 text-sm font-medium rounded-md">
+                        class="inline-flex items-center px-4  py-2 text-gray-800 text-sm font-medium rounded-md">
                         <button class="btn btn-primary fa-solid fa-trash" type="submit"> Delete</button>
                     </form>
                     <%}%>

@@ -30,4 +30,4 @@ My learning was focused on creating a full-stack web application where users cou
 
 ## Optimizations
 
-As I'm improving this project, I would like to work more on the front end of the application to make it more user-friendly; I would also like to create a calendar tab where each user could add the day they plan to make the activity.
+As I work on improving this project, my focus will be on enhancing the application's front end to improve user-friendliness. Additionally, I plan to incorporate a calendar tab, allowing users to schedule the days they intend to engage in specific activities. Moreover, I aim to enable users to browse activities based on various skills.

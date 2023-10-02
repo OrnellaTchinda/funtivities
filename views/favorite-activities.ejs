@@ -1,16 +1,65 @@
 <%- include('partials/logged-in-header') -%>
-    <div class="container">
+
+    <section id="portfolio" class="portfolio sections-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header p-4 mx-auto flex justify-center text-3xl font-semibold italic">
+                <h2>Favorites Activities</h2>
+            </div>
+            <%console.log(activities[0]) %>
+                <div class="body">
+
+                    <div class="container2">
+                        <% for(var i=0; i<activities.length; i++) {%>
+                            <%if(activities[i].favorites.includes(user.id)) {%>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a href="/activity/<%= activities[i]._id%>" data-gallery="portfolio-gallery-app"
+                                            class="glightbox recipePhoto">
+                                            <img class="img-fluid" src="<%= activities[i].image%>">
+                                        </a>
+                                        <!-- <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" /> -->
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="tag tag-teal">
+                                            <%= activities[i].skills %>
+                                        </span>
+                                        <h4 class="card-caption text">
+                                            <a href="#">
+                                                <%= activities[i].name %>
+                                            </a>
+                                        </h4>
+                                        <p class="card-description">
+                                            <%= activities[i].caption %>
+                                        </p>
+                                        <div class="user">
+                                            <!-- <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"
+                                        alt="user" /> -->
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <%}%>
+                                    <%}%>
+                    </div>
+
+                </div>
+        </div>
+    </section>
+    <!-- <div class="container">
         <div class="row mt-5">
             <div class="my-3 px-20">
-                <div>
+                <!-- <div>
                     <p><strong>User Name</strong>: <%= user.userName %>
                     </p>
                     <p><strong>Email</strong>: <%= user.email %>
                     </p>
                     <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-                </div>
+                </div> -->
 
-                <div class="mt-5 mx-auto">
+    <!-- <div class="mt-5 mx-auto">
                     <div class="section-header p-4 mx-auto flex justify-center text-3xl font-semibold italic">
                         <h1> My favorites Activties</h1>
                     </div>
@@ -39,8 +88,8 @@
                                         </div>
                                     </div>
                                     <%}%>
-                        </div>
-                        <!-- <ul class="row list-unstyled">
+                        </div>  -->
+    <!-- <ul class="row list-unstyled">
 
                             <li class="col-6 justify-content-between mt-5">
                                 <a href="/activity/<%= activities[i]._id%>">
@@ -58,13 +107,13 @@
                             </li>
                             
                         </ul> -->
-                        <% } %>
-                            <div class="row justify-content-center mt-5">
-                                <a class="btn btn-primary" href="/feedA">Return to Feed</a>
-                            </div>
-                </div>
+    <!-- <% } %>
+            <div class="row justify-content-center mt-5">
+                <a class="btn btn-primary" href="/feedA">Return to Feed</a>
+            </div>
+            </div>
 
             </div>
-        </div>
-    </div>
+            </div>
+            </div> -->
     <%- include('partials/footer') -%>
